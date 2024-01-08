@@ -15,3 +15,7 @@ let MaxSoundLevel = 0
 let result = 0
 basic.showIcon(IconNames.Surprised)
 result = 0
+basic.forever(function () {
+    basic.showNumber(Environment.ReadNoise(AnalogPin.P0))
+    serial.writeValue("Loudness", Environment.ReadNoise(AnalogPin.P0))
+})
